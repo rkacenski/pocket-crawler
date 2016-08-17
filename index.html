@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Linky | A Crawler for Pocket</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet">
+	
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/feed.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form id="add-feed" class="form-signin">
+        <h2 class="form-signin-heading">Add feed</h2>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
+		
+        <input type="text" id="feed" name="feed" class="form-control" placeholder="Feed url" required>
+		
+        <input type="text" id="last_update" name="last_update" class="form-control" placeholder="Start crawl" required>
+		
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="xml" value="1"> XML feed?
+          </label>
+        </div>
+		
+		<input type="text" id="artx" name="artx" class="form-control" placeholder="Xpath to Article" >
+		
+		<input type="text" id="timex" name="timex" class="form-control" placeholder="Xpath to Time" >
+		
+        <button class="btn btn-lg btn-primary btn-block" id="test" type="submit">Test Feed</button>
+      </form>
+	  
+	  <div id="infobox" class="box"></div>
+	  <div id="htmlbox" class="box"> </div>
+	  
+	  <div id="send-feed" class="box">
+	  	<button class="btn btn-lg btn-primary btn-block" id="add" type="submit">Add Feed</button>
+	  </div>
+
+    </div> <!-- /container -->
+	
+	<script type="text/javascript" src="js/feed.js"></script>
+	<script type="text/javascript"> 
+		$(document).ready(function(){ 
+			$("#add-feed").submit(function(e) { 
+				 e.preventDefault();
+				 test_feed();
+			});
+			
+			$("#add").click(function(e) { 
+				 e.preventDefault();
+				 send_feed();
+			});
+		}); 
+	</script>
+  </body>
+</html>

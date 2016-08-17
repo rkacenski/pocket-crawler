@@ -1,0 +1,6 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "~4",
+        "fabpot/goutte": "~2.0"
+    }
+}
